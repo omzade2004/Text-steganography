@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Text Steganography</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>📝 Text Steganography</h2>
+
+    <textarea id="coverText" placeholder="Enter normal text"></textarea>
+    <input type="text" id="secretText" placeholder="Enter secret message">
+
+    <button onclick="hideMessage()">Hide Message</button>
+
+    <textarea id="encodedText" placeholder="Encoded text will appear here"></textarea>
+
+    <hr>
+
+    <textarea id="decodeInput" placeholder="Paste encoded text"></textarea>
+    <button onclick="revealMessage()">Reveal Message</button>
+
+    <p id="decodedOutput"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
