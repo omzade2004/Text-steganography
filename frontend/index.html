@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A simple text steganography tool for hiding and extracting messages in text." />
+  <title>Text Steganography</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div class="mark" aria-hidden="true">TS</div>
+     
+      <h1>Text <span>Steganography</span></h1>
+      <p class="subtitle">Hide a private message inside ordinary text using invisible Unicode characters.</p>
+      
+    </header>
+
+    <section class="card">
+      <div class="tabs" role="tablist" aria-label="Steganography mode">
+        <button class="tab active" data-mode="hide" role="tab" aria-selected="true">Hide message</button>
+        <button class="tab" data-mode="extract" role="tab" aria-selected="false">Extract message</button>
+      </div>
+
+      <form id="hide-form" class="panel">
+        <label for="cover-text">Cover text <span>Text visible to everyone</span></label>
+        <textarea id="cover-text" rows="4" maxlength="10000" placeholder="Example: Have a nice day!"></textarea>
+
+        <label for="secret-message">Secret message <span>Hidden inside the output</span></label>
+        <textarea id="secret-message" rows="3" maxlength="2000" placeholder="Type the message you want to hide..."></textarea>
+
+        <button class="primary" type="submit">Hide message <span aria-hidden="true">→</span></button>
+      </form>
+
+      <form id="extract-form" class="panel hidden">
+        <label for="encoded-text">Text containing hidden data</label>
+        <textarea id="encoded-text" rows="7" placeholder="Paste the complete encoded text here..."></textarea>
+        <button class="primary" type="submit">Extract message <span aria-hidden="true">→</span></button>
+      </form>
+
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+
+      <section id="result" class="result hidden">
+        <div class="result-head">
+          <h2 id="result-title">Result</h2>
+          <button id="copy-btn" class="secondary" type="button">Copy</button>
+        </div>
+        <pre id="result-text"></pre>
+        <p class="hint" id="result-hint"></p>
+      </section>
+    </section>
+
+    <footer>Built with FastAPI · HTML · CSS · JavaScript</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
